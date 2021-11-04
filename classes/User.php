@@ -1,16 +1,17 @@
 <?php
 
 class User{
-    private $nome;
-    private $cognome;
-    private $dataDiNascita;
-    private $sesso;
+    protected $nome;
+    protected $cognome;
+    protected $dataDiNascita;
+    protected $cassa = 0;
 
-    function __construct($_nome,$_cognome,$_dataDiNascita)
+    public function __construct($_nome,$_cognome,$_dataDiNascita,$_cassa)
     {
         $this->nome = $_nome;
         $this->cognome = $_cognome;
         $this->dataDiNascita = $_dataDiNascita;
+        $this->cassa = $_cassa;
     }
 
     public function getNome(){
@@ -22,8 +23,11 @@ class User{
     public function getdataDiNascita(){
         return $this->dataDiNascita;
     }
-    public function getSesso(){
-        return $this->sesso;
+    public function getCassa(){
+        return $this->cassa;
+    }
+    public function setCassa($cassa){
+        $this->cassa = $cassa;
     }
 
 }
